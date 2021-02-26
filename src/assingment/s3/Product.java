@@ -4,7 +4,7 @@ public class Product {
    private int id;
    private String productName;
    private int qty;
-   private float Price;
+   private double Price;
 
     public Product(){
     }
@@ -36,19 +36,21 @@ public class Product {
         this.qty = qty;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return Price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.Price = price;
     }
 
-    public void soluong(){
+    public boolean soLuong(){
             if (qty > 0){
                     System.out.println("con hang");
+                    return true;
             }else{
                 System.out.println("het hang");
+                return false;
             }
     }
 

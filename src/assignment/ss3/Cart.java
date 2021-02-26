@@ -1,20 +1,19 @@
 package assignment.ss3;
 
+import assingment.s3.Product;
+
 import java.util.ArrayList;
 
 public class Cart {
-    private int id;
-    ArrayList<String>customer;
-    ArrayList<String> Productlist;
-    private float grandtotal;
-    private String City;
-    //tham so
-    public  Cart(){
-        customer = new ArrayList<String>();
-        Productlist = new ArrayList<String>();
-    }
-    // GETTER SETTER
+    int id;
+    String customer;
+    double grandTotal;
+    String city;
+    ArrayList<Product> productList;
 
+    public Cart() {
+        productList = new ArrayList<Product>();
+    }
 
     public int getId() {
         return id;
@@ -24,24 +23,61 @@ public class Cart {
         this.id = id;
     }
 
-    public float getGrandtotal() {
-        return grandtotal;
+    public String getCustomer() {
+        return customer;
     }
 
-    public void setGrandtotal(float grandtotal) {
-        this.grandtotal = grandtotal;
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
+    public double getGrandTotal() {
+        return grandTotal;
+    }
+
+    public void setGrandTotal(double grandTotal) {
+        this.grandTotal = grandTotal;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
-    //THEM SP
-    public void add(String sanpham){Productlist.add(sanpham);}
-    // XOA SP
-    public void remove(String sanpham){Productlist.remove(sanpham);}
+
+    public ArrayList<Product> getProductList() {
+        return productList;
+    }
+
+    public boolean addProduct(Product pd){
+        if(pd.soLuong()){
+            getProductList().add(pd);
+            pd.setQty(pd.getQty()-1);
+            setGrandTotal(getGrandTotal()+pd.getPrice());
+            return true;
+        }
+        return false;
+    }
+
+    public void removeProduct(int index){
+        Product p = productList.get(index);
+        p.setQty(p.getQty()+1);
+        getProductList().remove(index);
+        setGrandTotal(getGrandTotal()-p.getPrice());
+    }
+
+    public boolean checkCity(){
+        return getCity() == "HN" || getCity() == "HCM";
+    }
+
+    public double finalGrandTotal(){
+        if(checkCity()){
+            return  getGrandTotal()+ getGrandTotal()*1/100;
+        }
+        return  getGrandTotal() +  getGrandTotal() * 2/100;
+    }
 }
+
 
