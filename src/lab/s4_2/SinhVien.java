@@ -5,13 +5,14 @@ import java.util.ArrayList;
 public class SinhVien {
     private int maso;
     private String hoten;
-    private int sodienthoai;
+    private String sodienthoai;
     private String diachi;
 
     //ham khoi tao
-    public SinhVien(){
+    public SinhVien() {
     }
-//getter setter
+
+    //getter setter
     public int getMaso() {
         return maso;
     }
@@ -28,11 +29,11 @@ public class SinhVien {
         this.hoten = hoten;
     }
 
-    public int getSodienthoai() {
+    public String getSodienthoai() {
         return sodienthoai;
     }
 
-    public void setSodienthoai(int sodienthoai) {
+    public void setSodienthoai(String sodienthoai) {
         this.sodienthoai = sodienthoai;
     }
 

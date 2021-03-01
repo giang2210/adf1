@@ -52,9 +52,9 @@ public class LopHoc {
         danhsachsinhvien.remove(index);
     }
     public void  printsv(){
-        System.out.println("mã lớp:"+getMalop());
-        System.out.println("tên lớp:"+getTenlop());
-        System.out.println("phòng học:"+getPhonghoc());
+        System.out.println("mã SV:"+getMalop());
+        System.out.println("tên sv:"+getTenlop());
+        System.out.println("Dien thoai:"+getPhonghoc());
         System.out.println("danh sách sinh viên:");
         for (SinhVien i:danhsachsinhvien){
             System.out.println(i);

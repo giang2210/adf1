@@ -6,30 +6,25 @@ public class Main {
         r.setMaso(1);
         r.setHoten("hoàng sơn");
         r.setDiachi("bắc giang");
-        r.setSodienthoai(12344456);
+        r.setSodienthoai("123444567");
 
 
         SinhVien r1 = new SinhVien();
         r1.setMaso(2);
         r1.setHoten("bùi sơn");
         r1.setDiachi("hà nội");
-        r1.setSodienthoai(2341678);
+        r1.setSodienthoai("234167877");
 
-        LopHoc c = new LopHoc();
-        c.setMalop(1);
-        c.setTenlop("T2008M");
-        c.setPhonghoc("phong so 2");
-
-
-        c.addSv(r);
-        c.addSv(r);
-        c.addSv(r);
-        c.addSv(r1);
-        c.addSv(r1);
-        c.addSv(r1);
+        LopHoc r2 = new LopHoc();
+        r2.setMalop(1);
+        r2.setTenlop("T2008M");
+        r2.setPhonghoc("phong so 2");
+        r2.addSv(r);
+        r2.addSv(r1);
+        //c.removeSv(1);
 
         System.out.println("danh sach sinh vien trong lop:");
-        for (SinhVien p : c.Danhsachsinhvien()){
+        for (SinhVien p : r2.Danhsachsinhvien()){
             System.out.println(p.getMaso()+"-"+ p.getHoten()+"-"+p.getDiachi()+"-"+p.getSodienthoai());
         }
         }
